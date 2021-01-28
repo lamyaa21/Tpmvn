@@ -43,6 +43,11 @@ public class MongoExample {
         DBCursor cursor = collection.find(searchQuery);
         while (cursor.hasNext()) {
             System.out.println(cursor.next());
+        
+         // delete data
+            BasicDBObject deleteQuery = new BasicDBObject();
+            deleteQuery.put("name", "John");
+            collection.remove(deleteQuery);
         }
     }
 }
